@@ -23,6 +23,8 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
+DEVICE_PATH := device/xiaomi/whyred
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -52,7 +54,7 @@ BOARD_KERNEL_CMDLINE += androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0
 BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1
 BOARD_KERNEL_CMDLINE += service_locator.enable=1 swiotlb=1 androidboot.configfs=true
 BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a800000.dwc3
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive printk.devkmsg=on
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
@@ -98,3 +100,35 @@ TW_MAX_BRIGHTNESS := 4095
 TW_THEME := portrait_hdpi
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_USE_TOOLBOX := true
+
+# MTP seems to cause a kernel panic, at least with some kernels, so disable it for now
+TW_EXCLUDE_MTP := true
+TWRP_INCLUDE_LOGCAT := true
+TARGET_USES_LOGD := true
+PLATFORM_SECURITY_PATCH := 2025-12-31
+PLATFORM_VERSION := 25.0.0
+
+# MultiROM configuration
+MR_DEVICE_HOOKS := $(DEVICE_PATH)/multirom/mr_hooks.c
+MR_DEVICE_HOOKS_VER := 6
+MR_DEVICE_BOOTDEVICE := /dev/block/platform/soc/1d84000.ufshc
+MR_DPI := xhdpi
+MR_DPI_FONT := 340
+MR_ENCRYPTION := true
+MR_ENCRYPTION_FAKE_PROPERTIES := true
+MR_ENCRYPTION_FAKE_PROPERTIES_EXTRAS := $(DEVICE_PATH)/multirom/mr_fake_properties.c
+MR_ENCRYPTION_SETUP_SCRIPT := $(DEVICE_PATH)/multirom/mr_cp_crypto.sh
+MR_FSTAB := $(DEVICE_PATH)/recovery.fstab
+MR_INIT_DEVICES := $(DEVICE_PATH)/multirom/mr_init_devices.c
+MR_INPUT_TYPE := type_b
+MR_KEXEC_MEM_MIN := 0x86000000
+MR_NO_KEXEC := enabled
+MR_PIXEL_FORMAT := "RGBX_8888"
+MR_UNIFIED_TABS := true
+MR_USE_MROM_FSTAB := true
+MR_EXTRA_FIRMWARE_DIR := "/mrom_enc/vendor/firmware"
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+DEVICE_RESOLUTION := 1080x2160
+TARGET_RECOVERY_IS_MULTIROM := true
+MR_DEVICE_HAS_VENDOR_PARTITION := true
+MR_DEVICE_HAS_DRM_GRAPHICS := true
