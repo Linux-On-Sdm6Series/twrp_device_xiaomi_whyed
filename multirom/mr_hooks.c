@@ -284,7 +284,7 @@ void tramp_hook_encryption_setup(void)
     // start qseecomd
     char* env[] = {"LD_LIBRARY_PATH=/mrom_enc", "LD_PRELOAD=/mrom_enc/libmultirom_fake_properties.so /mrom_enc/libmultirom_fake_propertywait.so", NULL};
 
-    symlink("/dev/block/platform/soc/1d84000.ufshc", "/dev/block/bootdevice");
+    symlink("/dev/block/platform/soc/c0c4000.sdhci", "/dev/block/bootdevice");
     struct bootimg img;
     if(libbootimg_init_load(&img, "/dev/block/bootdevice/by-name/boot", LIBBOOTIMG_LOAD_HDR_ONLY) < 0)
     {
