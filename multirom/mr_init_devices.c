@@ -27,28 +27,9 @@ const char *mr_init_devices[] =
     "/sys/module/mmcblk",
 
     // Internal storage
-    "/sys/devices/platform/soc/1d84000.ufshc",
-    "/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0",
-    "/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0",
-    "/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:1",
-    "/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:2",
-    "/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:3",
-    "/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:4",
-    "/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:5",
-    "/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/block/sda",
-    "/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:1/block/sdb",
-    "/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:2/block/sdc",
-    "/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:3/block/sdd",
-    "/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:4/block/sde",
-    "/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:5/block/sdf",
-    "/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/block/sda/*",
-    "/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:1/block/sdb/*",
-    "/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:2/block/sdc/*",
-    "/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:3/block/sdd/*",
-    "/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:4/block/sde/*",
-    "/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:5/block/sdf/*",
-
-
+    "/dev/block/platform/soc/c0c4000.sdhci",
+    "/dev/block/platform/soc/c0c4000.sdhci/mmcblk*",
+ 
     // External storage
     //"/sys/block/mmcblk1",
     //"/sys/block/mmcblk1",
