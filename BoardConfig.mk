@@ -110,7 +110,7 @@ PLATFORM_VERSION := 25.0.0
 # MultiROM configuration
 MR_DEVICE_HOOKS := $(DEVICE_PATH)/multirom/mr_hooks.c
 MR_DEVICE_HOOKS_VER := 6
-MR_DEVICE_BOOTDEVICE := /dev/block/platform/soc/1d84000.ufshc
+MR_DEVICE_BOOTDEVICE := /dev/block/platform/soc/c0c4000.sdhci
 MR_DPI := xhdpi
 MR_DPI_FONT := 340
 MR_ENCRYPTION := true
