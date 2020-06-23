@@ -3,7 +3,7 @@
 # $2 path to /multirom/enc folder in installation zip
 
 # Constants
-DEVICE_PATH="device/xiaomi/beryllium";
+DEVICE_PATH="device/xiaomi/whyred";
 
 # Import decrypt files
 mkdir -p "$2/vendor/firmware";
