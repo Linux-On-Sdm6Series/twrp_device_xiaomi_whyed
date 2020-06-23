@@ -18,17 +18,19 @@ const char *mr_init_devices[] =
 
     // Storage devices
     "/sys/dev/block/*",
-    "/sys/block/sda",
-    "/sys/block/sdb",
-    "/sys/block/sdc",
-    "/sys/block/sdd",
-    "/sys/block/sde",
-    "/sys/block/sdf",
-    "/sys/module/mmcblk",
+    "/sys/block/*",
+    //"/sys/block/sdb",
+    //"/sys/block/sdc",
+    //"/sys/block/sdd",
+    //"/sys/block/sde",
+    //"/sys/block/sdf",
+    //"/sys/module/mmcblk",
 
     // Internal storage
     "/dev/block/platform/soc/c0c4000.sdhci",
     "/dev/block/platform/soc/c0c4000.sdhci/mmcblk*",
+    "/dev/block/platform/soc/c0c4000.sdhci/by-name/*",
+    "/dev/block/platform/soc/c084000.sdhci/*",
  
     // External storage
     //"/sys/block/mmcblk1",
@@ -53,7 +55,7 @@ const char *mr_init_devices[] =
     "/sys/devices/platform/soc/soc:gpio_keys/input*",
     "/sys/devices/virtual/input*",
     "/sys/devices/virtual/misc/uinput",
-    "/sys/devices/platform/soc/a98000.i2c/i2c-3/3-0062",
+    "/sys/devices/soc/c175000.i2c/i2c-1/1-0062",
 
     // ADB
     "/sys/devices/virtual/tty/ptmx",
