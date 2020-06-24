@@ -47,9 +47,8 @@ TARGET_NO_BOOTLOADER := true
 LOCAL_SDK_VERSION := current
 
 # Crypto
-TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
-TARGET_HW_DISK_ENCRYPTION := true
-
+# TARGET_HW_DISK_ENCRYPTION := true
+TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
 MR_FIRMWARE_DIR := "/vendor/firmware_mnt"
 
 # Kernel
@@ -59,11 +58,21 @@ BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_ena
 BOARD_KERNEL_CMDLINE += service_locator.enable=1 swiotlb=1 androidboot.configfs=true
 BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a800000.dwc3
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive printk.devkmsg=on
-BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_PAGESIZE := 4096
+# BOARD_KERNEL_BASE := 0x00000000
+# BOARD_KERNEL_PAGESIZE := 4096
+# BOARD_KERNEL_TAGS_OFFSET := 0x00000100
+# BOARD_RAMDISK_OFFSET     := 0x01000000
+# TARGET_PREBUILT_KERNEL := device/xiaomi/whyred/prebuilt/Image.gz-dtb
+BOARD_KERNEL_BASE        := 0x00000000
+BOARD_KERNEL_PAGESIZE    := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET     := 0x01000000
-TARGET_PREBUILT_KERNEL := device/xiaomi/whyred/prebuilt/Image.gz-dtb
+BOARD_KERNEL_IMAGE_NAME  := Image.gz-dtb
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_HEADER_ARCH := arm64
+TARGET_KERNEL_SOURCE := kernel/xiaomi/sdm660
+TARGET_KERNEL_CONFIG := whyred-perf_defconfig
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 
 # Platform
 TARGET_BOARD_PLATFORM := sdm660
@@ -110,7 +119,7 @@ TW_EXCLUDE_MTP := true
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 PLATFORM_SECURITY_PATCH := 2025-12-31
-PLATFORM_VERSION := 8.1.0
+PLATFORM_VERSION := 25.0.0
 
 # MultiROM configuration
 MR_DEVICE_HOOKS := $(DEVICE_PATH)/multirom/mr_hooks.c
@@ -118,7 +127,7 @@ MR_DEVICE_HOOKS_VER := 6
 MR_DEVICE_BOOTDEVICE := /dev/block/platform/soc/c0c4000.sdhci
 MR_DPI := xhdpi
 MR_DPI_FONT := 340
-MR_ENCRYPTION := true
+# MR_ENCRYPTION := true
 MR_ENCRYPTION_FAKE_PROPERTIES := true
 MR_ENCRYPTION_FAKE_PROPERTIES_EXTRAS := $(DEVICE_PATH)/multirom/mr_fake_properties.c
 MR_ENCRYPTION_SETUP_SCRIPT := $(DEVICE_PATH)/multirom/mr_cp_crypto.sh
