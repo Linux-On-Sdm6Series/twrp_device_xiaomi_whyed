@@ -31,7 +31,7 @@ const char *mr_init_devices[] =
     "/dev/block/platform/soc/c0c4000.sdhci/mmcblk*",
     "/dev/block/platform/soc/c0c4000.sdhci/by-name/*",
     "/dev/block/platform/soc/c084000.sdhci/*",
- 
+
     // External storage
     //"/sys/block/mmcblk1",
     //"/sys/block/mmcblk1",
