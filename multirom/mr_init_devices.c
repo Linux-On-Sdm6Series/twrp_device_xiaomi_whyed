@@ -12,25 +12,30 @@ const char *mr_init_devices[] =
 
 	// Storage Devices
     "/sys/dev/block/*",
-    "/sys/block/*",
+    "/sys/block/mmcblk0/*",
     //"/sys/devices/msm_sdcc.1*",
     //"/sys/devices/msm_sdcc.2*",
     //"/sys/devices/platform/msm_hsusb_host*",
     "/sys/bus/mmc*",
-    "/sys/dev/block*",
 
 	// Internal storage
     "/dev/block/platform/soc/c0c4000.sdhci",
     "/dev/block/platform/soc/c0c4000.sdhci/mmcblk*",
-    "/dev/block/platform/soc/c0c4000.sdhci/by-name/*",
-    "/dev/block/platform/soc/c084000.sdhci/*",
+    //"/dev/block/platform/soc/c0c4000.sdhci/by-name/*",
+    //"/dev/block/platform/soc/c084000.sdhci/*",
+    //"/dev/block/platform/soc/c084000.sdhci",
+
+	//USB
+    "/sys/devices/soc/a800000.ssusb/a800000.dwc3",
 
 	// Input
     "/sys/class/input/event*",
     "/sys/class/input/input*",
     "/sys/class/misc/uinput",
     "/sys/class/tty/ptmx",
-    "/sys/devices/soc/c175000.i2c/i2c-1/1-0062",
+    "/sys/class/android_usb/android0/*",
+    "/sys/class/android_usb/android1/*",
+    //"/sys/devices/soc/c175000.i2c/i2c-1/1-0062",
     "/sys/devices/virtual/input*",
     "/sys/devices/virtual/misc/uinput",
 
