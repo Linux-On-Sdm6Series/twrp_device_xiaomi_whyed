@@ -49,7 +49,6 @@ LOCAL_SDK_VERSION := current
 # Crypto
 # TARGET_HW_DISK_ENCRYPTION := true
 TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
-MR_FIRMWARE_DIR := "/vendor/firmware_mnt"
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 earlycon=msm_serial_dm,0xc170000
@@ -140,6 +139,7 @@ MR_PIXEL_FORMAT := "RGBX_8888"
 MR_UNIFIED_TABS := true
 MR_USE_MROM_FSTAB := true
 MR_EXTRA_FIRMWARE_DIR := "/mrom_enc/vendor/firmware"
+MR_FIRMWARE_DIR := "/vendor/firmware"
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 DEVICE_RESOLUTION := 1080x2160
 TARGET_RECOVERY_IS_MULTIROM := true
